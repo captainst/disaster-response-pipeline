@@ -55,7 +55,7 @@ def save_data(df_clean, database_filename):
         None.
     """
     engine = create_engine('sqlite:///' + database_filename)
-    df_clean.to_sql('resp_messages', engine, index=False)
+    df_clean.to_sql('resp_messages', engine, index=False, if_exists='replace')
 
 def main():
     if len(sys.argv) == 4:
